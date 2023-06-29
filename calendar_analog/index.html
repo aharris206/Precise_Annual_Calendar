@@ -1,0 +1,227 @@
+<!DOCTYPE html> <!--HTML5 DOCTYPE-->
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Language" content="en-US"> -->
+    <title>Dozenal Calendar</title>
+    <link rel="stylesheet" href="rsc/style.css">
+    <script src="rsc/code.js"></script>
+</head>
+<body onload = init()>
+    <center>
+        <h1 id="year">― 1156 ―</h1>
+        <!--
+        <svg viewbox= "0 -8 10 20">
+            <path d="M 1 -8 L 2 -8 L 2 -7  L 1 -7 Z" stroke="#000" id="zero_mo"/>
+            <path d="M 3 -8 L 4 -8 L 4 -7  L 3 -7 Z" stroke="#888" id="one_mo"/>
+                <path d="M 5 -8 L 6 -8 L 6 -7  L 5 -7 Z" stroke="#000" id="two_mo"/>
+                <path d="M 7 -8 L 8 -8 L 8 -7  L 7 -7 Z" stroke="#888" id="three_mo"/>
+                    <path d="M 9 -8 L 10 -8 L 10 -7  L 9 -7 Z" stroke="#000" id="four_mo"/>
+                    <path d="M 11 -8 L 12 -8 L 12 -7  L 11 -7 Z" stroke="#888" id="five_mo"/>
+                        <path d="M 13 -8 L 14 -8 L 14 -7  L 13 -7 Z" stroke="#000" id="six_mo"/>
+                        <path d="M 15 -8 L 16 -8 L 16 -7  L 15 -7 Z" stroke="#888" id="seven_mo"/>
+                            <path d="M 17 -8 L 18 -8 L 18 -7  L 17 -7 Z" stroke="#000" id="eight_mo"/>
+                            <path d="M 19 -8 L 20 -8 L 20 -7  L 19 -7 Z" stroke="#888" id="nine_mo"/>
+                                <path d="M 21 -8 L 22 -8 L 22 -7  L 21 -7 Z" stroke="#000" id="dek_mo"/>
+                                <path d="M 23 -8 L 24 -8 L 24 -7  L 23 -7 Z" stroke="#888" id="el_mo"/>
+
+            <path d="M 1 -5 L 2 -5 L 2 -4  L 1 -4 Z" stroke="#000" id="zero_gro"/>
+            <path d="M 3 -5 L 4 -5 L 4 -4  L 3 -4 Z" stroke="#888" id="one_gro"/>
+                <path d="M 5 -5 L 6 -5 L 6 -4  L 5 -4 Z" stroke="#000" id="two_gro"/>
+                <path d="M 7 -5 L 8 -5 L 8 -4  L 7 -4 Z" stroke="#888" id="three_gro"/>
+                    <path d="M 9 -5 L 10 -5 L 10 -4  L 9 -4 Z" stroke="#000" id="four_gro"/>
+                    <path d="M 11 -5 L 12 -5 L 12 -4  L 11 -4 Z" stroke="#888" id="five_gro"/>
+                        <path d="M 13 -5 L 14 -5 L 14 -4  L 13 -4 Z" stroke="#000" id="six_gro"/>
+                        <path d="M 15 -5 L 16 -5 L 16 -4  L 15 -4 Z" stroke="#888" id="seven_gro"/>
+                            <path d="M 17 -5 L 18 -5 L 18 -4  L 17 -4 Z" stroke="#000" id="eight_gro"/>
+                            <path d="M 19 -5 L 20 -5 L 20 -4  L 19 -4 Z" stroke="#888" id="nine_gro"/>
+                                <path d="M 21 -5 L 22 -5 L 22 -4  L 21 -4 Z" stroke="#000" id="dek_gro"/>
+                                <path d="M 23 -5 L 24 -5 L 24 -4  L 23 -4 Z" stroke="#888" id="el_gro"/>
+                    
+            <path d="M 1 -2 L 2 -2 L 2 -1  L 1 -1 Z" stroke="#000" id="zero_doz"/>
+            <path d="M 3 -2 L 4 -2 L 4 -1  L 3 -1 Z" stroke="#888" id="one_doz"/>
+                <path d="M 5 -2 L 6 -2 L 6 -1  L 5 -1 Z" stroke="#000" id="two_doz"/>
+                <path d="M 7 -2 L 8 -2 L 8 -1  L 7 -1 Z" stroke="#888" id="three_doz"/>
+                    <path d="M 9 -2 L 10 -2 L 10 -1  L 9 -1 Z" stroke="#000" id="four_doz"/>
+                    <path d="M 11 -2 L 12 -2 L 12 -1  L 11 -1 Z" stroke="#888" id="five_doz"/>
+                        <path d="M 13 -2 L 14 -2 L 14 -1  L 13 -1 Z" stroke="#000" id="six_doz"/>
+                        <path d="M 15 -2 L 16 -2 L 16 -1  L 15 -1 Z" stroke="#888" id="seven_doz"/>
+                            <path d="M 17 -2 L 18 -2 L 18 -1  L 17 -1 Z" stroke="#000" id="eight_doz"/>
+                            <path d="M 19 -2 L 20 -2 L 20 -1  L 19 -1 Z" stroke="#888" id="nine_doz"/>
+                                <path d="M 21 -2 L 22 -2 L 22 -1  L 21 -1 Z" stroke="#000" id="dek_doz"/>
+                                <path d="M 23 -2 L 24 -2 L 24 -1  L 23 -1 Z" stroke="#888" id="el_doz"/>
+
+            <path d="M 1 1 L 2 1 L 2 2  L 1 2 Z" stroke="#000" id="zero"/>
+            <path d="M 3 1 L 4 1 L 4 2  L 3 2 Z" stroke="#888" id="one"/>
+                <path d="M 5 1 L 6 1 L 6 2  L 5 2 Z" stroke="#000" id="two"/>
+                <path d="M 7 1 L 8 1 L 8 2  L 7 2 Z" stroke="#888" id="three"/>
+                    <path d="M 9 1 L 10 1 L 10 2  L 9 2 Z" stroke="#000" id="four"/>
+                    <path d="M 11 1 L 12 1 L 12 2  L 11 2 Z" stroke="#888" id="five"/>
+                        <path d="M 13 1 L 14 1 L 14 2  L 13 2 Z" stroke="#000" id="six"/>
+                        <path d="M 15 1 L 16 1 L 16 2  L 15 2 Z" stroke="#888" id="seven"/>
+                            <path d="M 17 1 L 18 1 L 18 2  L 17 2 Z" stroke="#000" id="eight"/>
+                            <path d="M 19 1 L 20 1 L 20 2  L 19 2 Z" stroke="#888" id="nine"/>
+                                <path d="M 21 1 L 22 1 L 22 2  L 21 2 Z" stroke="#000" id="dek"/>
+                                <path d="M 23 1 L 24 1 L 24 2  L 23 2 Z" stroke="#888" id="el"/>
+        </svg>
+        -->
+        <svg viewbox = "0 0 50 60">
+            
+            
+
+            <circle cx="25" cy="25" r="20" stroke="#642" stroke-width="0.8" fill="#FED" />
+            <!-- Zero --> <circle cx="25" cy="6.5" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="26.61238" cy="6.570398" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="27.41473" cy="6.65827" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="28.21249" cy="6.781057" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="29.00413" cy="6.938524" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="29.78815" cy="7.130372" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="30.56306" cy="7.356236" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="31.32737" cy="7.615687" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="32.07964" cy="7.908229" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="32.81844" cy="8.233306" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- One Dozen --> <circle cx="34.25" cy="8.97853" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="35.61116" cy="9.845687" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="36.26209" cy="10.322963" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="36.89157" cy="10.828178" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="37.49842" cy="11.360369" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="38.08148" cy="11.918525" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="38.63963" cy="12.501581" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="39.17182" cy="13.108429" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="39.67704" cy="13.737914" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="40.15431" cy="14.388836" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Two Dozen --> <circle cx="41.02147" cy="15.75" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="41.76669" cy="17.181562" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="42.09177" cy="17.920357" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="42.38431" cy="18.672627" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="42.64376" cy="19.436943" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="42.86963" cy="20.211848" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="43.06148" cy="20.995867" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="43.21894" cy="21.787509" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="43.34173" cy="22.585265" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="43.4296" cy="23.387619" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Three Dozen --> <circle cx="43.5" cy="25" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="43.4296" cy="26.612381" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="43.34173" cy="27.414735" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="43.21894" cy="28.212491" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="43.06148" cy="29.004133" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="42.86963" cy="29.788152" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="42.64376" cy="30.563057" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="42.38431" cy="31.327373" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="42.09177" cy="32.079643" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="41.76669" cy="32.818438" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Four Dozen --> <circle cx="41.02147" cy="34.25" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="40.15431" cy="35.611164" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="39.67704" cy="36.262086" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="39.17182" cy="36.891571" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="38.63963" cy="37.498419" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="38.08148" cy="38.081475" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="37.49842" cy="38.639631" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="36.89157" cy="39.171822" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="36.26209" cy="39.677037" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="35.61116" cy="40.154313" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Five Dozen --> <circle cx="34.25" cy="41.02147" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="32.81844" cy="41.766694" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="32.07964" cy="42.091771" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="31.32737" cy="42.384313" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="30.56306" cy="42.643764" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="29.78815" cy="42.869628" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="29.00413" cy="43.061476" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="28.21249" cy="43.218943" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="27.41473" cy="43.34173" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="26.61238" cy="43.429602" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Six Dozen--> <circle cx="25" cy="43.5" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="23.38762" cy="43.429602" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="22.58527" cy="43.34173" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="21.78751" cy="43.218943" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="20.99587" cy="43.061476" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="20.21185" cy="42.869628" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="19.43694" cy="42.643764" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="18.67263" cy="42.384313" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="17.92036" cy="42.091771" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="17.18156" cy="41.766694" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Seven Dozen --> <circle cx="15.75" cy="41.02147" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="14.38884" cy="40.154313" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="13.73791" cy="39.677037" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="13.10843" cy="39.171822" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="12.50158" cy="38.639631" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="11.91852" cy="38.081475" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="11.36037" cy="37.498419" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="10.82818" cy="36.891571" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="10.32296" cy="36.262086" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="9.84569" cy="35.611164" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Eight Dozen --> <circle cx="8.97853" cy="34.25" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="8.23331" cy="32.818438" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="7.90823" cy="32.079643" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="7.61569" cy="31.327373" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="7.35624" cy="30.563057" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="7.13037" cy="29.788152" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="6.93852" cy="29.004133" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="6.78106" cy="28.212491" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="6.65827" cy="27.414735" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="6.5704" cy="26.612381" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Nine Dozen --> <circle cx="6.5" cy="25" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="6.5704" cy="23.387619" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="6.65827" cy="22.585265" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="6.78106" cy="21.787509" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="6.93852" cy="20.995867" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="7.13037" cy="20.211848" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="7.35624" cy="19.436943" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="7.61569" cy="18.672627" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="7.90823" cy="17.920357" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="8.23331" cy="17.181562" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Dek Dozen --> <circle cx="8.97853" cy="15.75" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="9.84569" cy="14.388836" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="10.32296" cy="13.737914" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="10.82818" cy="13.108429" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="11.36037" cy="12.501581" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="11.91852" cy="11.918525" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="12.50158" cy="11.360369" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="13.10843" cy="10.828178" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="13.73791" cy="10.322963" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="14.38884" cy="9.845687" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- El Dozen --> <circle cx="15.75" cy="8.97853" r="0.8" fill="#000" />
+                <!-- One -->
+                    <!-- Two --> <circle cx="17.18156" cy="8.233306" r="0.1" fill="#320" />
+                        <!-- Three --> <circle cx="17.92036" cy="7.908229" r="0.2" fill="#320" />
+                            <!-- Four --> <circle cx="18.67263" cy="7.615687" r="0.1" fill="#320" />
+                                <!-- Five --> <circle cx="19.43694" cy="7.356236" r="0.1" fill="#320" />
+                                    <!-- Half --> <circle cx="20.21185" cy="7.130372" r="0.3" fill="#320" />
+                                <!-- Seven --> <circle cx="20.99587" cy="6.938524" r="0.1" fill="#320" />
+                            <!-- Eight --> <circle cx="21.78751" cy="6.781057" r="0.1" fill="#320" />
+                        <!-- Nine --> <circle cx="22.58527" cy="6.65827" r="0.2" fill="#320" />
+                    <!-- Dek --> <circle cx="23.38762" cy="6.570398" r="0.1" fill="#320" />
+                <!-- El -->
+            <!-- Month --> <circle cx="25" cy="6.5" r="0.6" id="month" fill="#0EF" />
+
+            <line x1="25" y1="25" x2="25" y2="15" id="shift" style="stroke:#210;stroke-width:0.42" />
+            <line x1="25" y1="25" x2="25" y2="10" id="span" style="stroke:#321;stroke-width:0.25" />
+            <line x1="25" y1="25" x2="25" y2="7.5" id="sec" style="stroke:#642;stroke-width:0.15" />
+            <circle cx="25" cy="25" r="1.2" fill="#D70" />
+        </svg>
+    </center>
+</body>
+
+</html>
